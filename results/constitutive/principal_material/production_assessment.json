@@ -1,0 +1,33 @@
+{
+  "checkpoint": "compute/runs/principal_material/production/best.pt",
+  "epoch": 290,
+  "summary": {
+    "all": {
+      "samples": 493568,
+      "stress_rmse": 0.2739233803108393,
+      "plastic_increment_rmse": 0.0006174303624615289,
+      "gamma_rmse": 0.0014048288947191402,
+      "cohesion_rmse": 0.4426337634446048,
+      "friction_rmse": 0.9076429283908638,
+      "yield_p90_MPa": 0.03707464958089153
+    },
+    "heldout_materials": {
+      "samples": 65536,
+      "stress_rmse": 0.3750067430726125,
+      "plastic_increment_rmse": 0.0008462833982977317,
+      "gamma_rmse": 0.0019165814665384458,
+      "cohesion_rmse": 0.7125771120199337,
+      "friction_rmse": 0.8970524183959532,
+      "yield_p90_MPa": 0.0842790531541111
+    },
+    "s2": {
+      "samples": 16384,
+      "stress_rmse": 0.03299507338030976,
+      "plastic_increment_rmse": 7.26329188449526e-05,
+      "gamma_rmse": 0.00016567394974219596,
+      "cohesion_rmse": 0.004238612217589866,
+      "friction_rmse": 0.11044923028896539,
+      "yield_p90_MPa": 0.0038927021886762374
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "checkpoint": "compute/runs/principal_material/ablation_general_matched/best.pt",
+  "epoch": 300,
+  "summary": {
+    "all": {
+      "samples": 493568,
+      "stress_rmse": 0.4063683906090184,
+      "plastic_increment_rmse": 0.0009164766268110138,
+      "gamma_rmse": 0.0020852803906382935,
+      "cohesion_rmse": 0.6655384146121928,
+      "friction_rmse": 1.1483184255183485,
+      "yield_p90_MPa": 0.11951014894656715
+    },
+    "heldout_materials": {
+      "samples": 65536,
+      "stress_rmse": 0.4584976120138589,
+      "plastic_increment_rmse": 0.0010340844986550949,
+      "gamma_rmse": 0.002336575241552358,
+      "cohesion_rmse": 0.8830663089804253,
+      "friction_rmse": 1.1132362885926574,
+      "yield_p90_MPa": 0.21593118460617095
+    },
+    "s2": {
+      "samples": 16384,
+      "stress_rmse": 0.04160969096251687,
+      "plastic_increment_rmse": 9.160891595143518e-05,
+      "gamma_rmse": 0.00021531849059126047,
+      "cohesion_rmse": 0.0073809858149357045,
+      "friction_rmse": 0.14338470141951373,
+      "yield_p90_MPa": 0.0027243321480808123
+    }
+  }
+}

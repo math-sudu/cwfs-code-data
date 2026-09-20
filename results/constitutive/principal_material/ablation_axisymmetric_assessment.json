@@ -1,0 +1,33 @@
+{
+  "checkpoint": "compute/runs/principal_material/ablation_axisymmetric/best.pt",
+  "epoch": 290,
+  "summary": {
+    "all": {
+      "samples": 493568,
+      "stress_rmse": 0.4915007024358493,
+      "plastic_increment_rmse": 0.0011108553549204966,
+      "gamma_rmse": 0.0026257380980815566,
+      "cohesion_rmse": 0.6239175427755699,
+      "friction_rmse": 1.037373504671379,
+      "yield_p90_MPa": 0.1273913019507427
+    },
+    "heldout_materials": {
+      "samples": 65536,
+      "stress_rmse": 0.41667721674299885,
+      "plastic_increment_rmse": 0.0009413478378613525,
+      "gamma_rmse": 0.0021919092054286677,
+      "cohesion_rmse": 0.6793489869186617,
+      "friction_rmse": 0.7688165220300596,
+      "yield_p90_MPa": 0.1787947593699168
+    },
+    "s2": {
+      "samples": 16384,
+      "stress_rmse": 0.03255657606958621,
+      "plastic_increment_rmse": 6.4584775584262e-05,
+      "gamma_rmse": 0.00014774359090078323,
+      "cohesion_rmse": 0.005062875128913264,
+      "friction_rmse": 0.09560797997789401,
+      "yield_p90_MPa": 0.0016618466283187846
+    }
+  }
+}

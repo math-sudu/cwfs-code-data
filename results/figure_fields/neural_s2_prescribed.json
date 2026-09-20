@@ -1,0 +1,2294 @@
+{
+  "case": "neural_s2_prescribed",
+  "engine": "Neural CWFS finite elements",
+  "config": {
+    "geometry": "cad_reference",
+    "horseshoe": {},
+    "cad_section": {
+      "geometry": {
+        "geometry_id": "s2_model_section",
+        "source": {
+          "boundary_role": "initial_support_inner",
+          "units": "m"
+        },
+        "transform": {
+          "scale": 1.0,
+          "source_crown_y_m": 0.0,
+          "target_width_m": 7.5,
+          "resulting_height_m": 6.094479004665629
+        },
+        "source_circular_arcs": [
+          {
+            "arc_id": "crown",
+            "center": [
+              0.0,
+              -3.7500000000000004
+            ],
+            "radius": 3.7500000000000004,
+            "start_rad": 0,
+            "sweep_rad": 3.141592653589793,
+            "start_deg": 0,
+            "end_deg": 180,
+            "sweep_deg": 180
+          },
+          {
+            "arc_id": "left_wall",
+            "center": [
+              1.4405132192846026,
+              -3.7500000000000004
+            ],
+            "radius": 5.190513219284602,
+            "start_rad": 3.141592653589793,
+            "sweep_rad": 0.2026688811966828,
+            "start_deg": 180,
+            "end_deg": 191.61207153120822,
+            "sweep_deg": 11.612071531208214
+          },
+          {
+            "arc_id": "left_knee",
+            "center": [
+              -2.551881517669129,
+              -4.57039757496181
+            ],
+            "radius": 1.1146982189860029,
+            "start_rad": 3.344261534786476,
+            "sweep_rad": 1.0499900128984248,
+            "start_deg": 191.61207153120822,
+            "end_deg": 251.7720678011748,
+            "sweep_deg": 60.15999626996661
+          },
+          {
+            "arc_id": "invert",
+            "center": [
+              0.0,
+              3.17846034214619
+            ],
+            "radius": 9.27293934681182,
+            "start_rad": 4.394251547684901,
+            "sweep_rad": 0.636274865399578,
+            "start_deg": 251.7720678011748,
+            "end_deg": 288.22793219882516,
+            "sweep_deg": 36.45586439765035
+          },
+          {
+            "arc_id": "right_knee",
+            "center": [
+              2.551881517669129,
+              -4.57039757496181
+            ],
+            "radius": 1.1146982189860029,
+            "start_rad": 5.030526413084479,
+            "sweep_rad": 1.0499900128984248,
+            "start_deg": 288.22793219882516,
+            "end_deg": 348.3879284687918,
+            "sweep_deg": 60.15999626996661
+          },
+          {
+            "arc_id": "right_wall",
+            "center": [
+              -1.4405132192846026,
+              -3.7500000000000004
+            ],
+            "radius": 5.190513219284602,
+            "start_rad": 6.080516425982903,
+            "sweep_rad": 0.2026688811966828,
+            "start_deg": 348.3879284687918,
+            "end_deg": 360,
+            "sweep_deg": 11.612071531208214
+          }
+        ]
+      },
+      "reference_boundary": "initial_support_inner",
+      "cut_levels_y_m": [
+        -3.5805064152410573,
+        -5.637393079315707
+      ],
+      "station_depths_m": {
+        "shoulder": 1.9045246889580092,
+        "haunch": 3.5805064152410573,
+        "foot": 5.256488141524105
+      },
+      "position_basis": "Height-proportional construction cuts and monitoring positions."
+    },
+    "circle_radius": 4.9,
+    "lining": {
+      "enabled": true,
+      "E": 35500.0,
+      "nu": 0.2,
+      "model": "tresca",
+      "sigma_lim": 36.2801724137931,
+      "thickness": 0.29
+    },
+    "ring_upgrade": {
+      "enabled": false
+    },
+    "bolts": {
+      "enabled": true,
+      "diameter_mm": 32.0,
+      "arch_length_m": 5.0,
+      "wall_length_m": 5.0,
+      "spacing_circumferential_m": 1.2,
+      "spacing_longitudinal_m": 0.6,
+      "steel_E_MPa": 206000.0,
+      "steel_yield_MPa": 235.0,
+      "mobilisation": 1.0
+    },
+    "rock": {
+      "model": "neural_cwfs",
+      "E": 560.0,
+      "nu": 0.3,
+      "c_peak": 1.0,
+      "c_res": 0.2,
+      "phi_peak_deg": 20.0,
+      "phi_res_deg": 30.0,
+      "gp_c": 0.01,
+      "gp_phi": 0.015,
+      "psi_deg": 5.0,
+      "checkpoint": "compute/runs/principal_material/production/best.pt"
+    },
+    "stress": {
+      "sigma_v": 6.74,
+      "K": 1.5,
+      "sigma_z": 11.65
+    },
+    "mesh": {
+      "h_wall": 0.4,
+      "r_far": 80.0,
+      "h_far": null,
+      "h_ring": null,
+      "dist_min": null,
+      "growth_length": null
+    },
+    "stages": [
+      {
+        "regions": [
+          1
+        ],
+        "n_increments": 10,
+        "lambda_install": 0.3,
+        "lambda_end": 0.6,
+        "install_regions": null,
+        "extra_lambdas": [],
+        "install_gap_m": null
+      },
+      {
+        "regions": [
+          2
+        ],
+        "n_increments": 10,
+        "lambda_install": 0.3,
+        "lambda_end": 0.85,
+        "install_regions": null,
+        "extra_lambdas": [],
+        "install_gap_m": null
+      },
+      {
+        "regions": [
+          3
+        ],
+        "n_increments": 10,
+        "lambda_install": 0.3,
+        "lambda_end": 1.0,
+        "install_regions": null,
+        "extra_lambdas": [],
+        "install_gap_m": null
+      }
+    ],
+    "solver": {
+      "tol_rel": 0.001,
+      "tol_abs": 1e-10,
+      "max_iter": 25,
+      "modified_max_iter": 400,
+      "relax_block": 30,
+      "max_stalls": 10,
+      "max_bisect": 8,
+      "line_search": true,
+      "adaptive": true,
+      "divergence_factor": 1000.0,
+      "on_failure": "partial",
+      "time_scale": 1.0
+    },
+    "readings": {
+      "chord_depths": [
+        1.9045246889580092,
+        3.5805064152410573,
+        5.256488141524105
+      ],
+      "station_window": 0.5,
+      "plastic_band": 0.5,
+      "boundary": "initial_support_inner"
+    },
+    "label": "neural_s2_prescribed"
+  },
+  "events": [
+    {
+      "name": "heading_install",
+      "stage": 1,
+      "lambda": 0.3,
+      "readings": {
+        "stage": 1,
+        "lambda": 0.3,
+        "readings_total": {
+          "crown": -0.0,
+          "chord_1": -0.0,
+          "chord_2": 0.0022460020330187227,
+          "chord_3": 0.009727789641244837
+        },
+        "readings_post_install": {
+          "crown": 0.0,
+          "chord_1": 0.0,
+          "chord_2": 0.0,
+          "chord_3": null
+        },
+        "event": "install",
+        "n_ring_elements": 122,
+        "n_annulus_elements": 684,
+        "convergence_at_install_m": null,
+        "equilibrium": {
+          "residual_norm": 0.0011648270121758816,
+          "release_force_norm_free": 9.307260405741516,
+          "tolerance": 0.009307260505741516,
+          "residual_over_tolerance": 0.12515250985586107
+        }
+      }
+    },
+    {
+      "name": "before_bench",
+      "stage": 1,
+      "lambda": 0.6,
+      "readings": {
+        "stage": 1,
+        "lambda": 0.6,
+        "readings_total": {
+          "crown": 0.0032134427619679804,
+          "chord_1": 0.013587057305917883,
+          "chord_2": 0.013356178027252561,
+          "chord_3": 0.02393989753824505
+        },
+        "readings_post_install": {
+          "crown": 0.0032134427619679804,
+          "chord_1": 0.013587057305917883,
+          "chord_2": 0.011110175994233838,
+          "chord_3": null
+        },
+        "equilibrium": {
+          "residual_norm": 0.00019786650386308582,
+          "release_force_norm_free": 9.307260405741516,
+          "tolerance": 0.009307260505741516,
+          "residual_over_tolerance": 0.021259370976134687
+        }
+      }
+    },
+    {
+      "name": "before_invert",
+      "stage": 2,
+      "lambda": 0.85,
+      "readings": {
+        "stage": 2,
+        "lambda": 0.85,
+        "readings_total": {
+          "crown": 0.03110842433375207,
+          "chord_1": 0.1488853638547275,
+          "chord_2": 0.1924350778127597,
+          "chord_3": 0.19340248602902096
+        },
+        "readings_post_install": {
+          "crown": 0.03110842433375207,
+          "chord_1": 0.1488853638547275,
+          "chord_2": 0.19018907577974098,
+          "chord_3": 0.16946258849077592
+        },
+        "equilibrium": {
+          "residual_norm": 0.007254941141802224,
+          "release_force_norm_free": 7.285943480397435,
+          "tolerance": 0.0072859435803974346,
+          "residual_over_tolerance": 0.9957448972458939
+        }
+      }
+    },
+    {
+      "name": "ring_closure",
+      "stage": 3,
+      "lambda": 0.3,
+      "readings": {
+        "stage": 3,
+        "lambda": 0.3,
+        "readings_total": {
+          "crown": 0.03771755961284771,
+          "chord_1": 0.17112819710767693,
+          "chord_2": 0.22608853526622866,
+          "chord_3": 0.2438203576925
+        },
+        "readings_post_install": {
+          "crown": 0.03771755961284771,
+          "chord_1": 0.17112819710767693,
+          "chord_2": 0.22384253323320993,
+          "chord_3": 0.21988046015425494
+        },
+        "event": "install",
+        "n_ring_elements": 73,
+        "n_annulus_elements": 372,
+        "convergence_at_install_m": null,
+        "equilibrium": {
+          "residual_norm": 0.001783870793219293,
+          "release_force_norm_free": 1.7937898887021944,
+          "tolerance": 0.0017937899887021944,
+          "residual_over_tolerance": 0.9944702581989111
+        }
+      }
+    },
+    {
+      "name": "full_release",
+      "stage": 3,
+      "lambda": 1.0,
+      "readings": {
+        "stage": 3,
+        "lambda": 1.0,
+        "readings_total": {
+          "crown": 0.04679447623285367,
+          "chord_1": 0.18438344230098697,
+          "chord_2": 0.23791595925056244,
+          "chord_3": 0.24589205861251812
+        },
+        "readings_post_install": {
+          "crown": 0.04679447623285367,
+          "chord_1": 0.18438344230098697,
+          "chord_2": 0.23566995721754372,
+          "chord_3": 0.22195216107427307
+        },
+        "equilibrium": {
+          "residual_norm": 0.0008222252113573526,
+          "release_force_norm_free": 1.7937898887021944,
+          "tolerance": 0.0017937899887021944,
+          "residual_over_tolerance": 0.45837317441616
+        }
+      }
+    }
+  ],
+  "history": [
+    {
+      "stage": 1,
+      "lambda": 0.0,
+      "readings_total": {
+        "crown": -0.0,
+        "chord_1": -0.0,
+        "chord_2": -0.0,
+        "chord_3": -0.0
+      },
+      "readings_post_install": {
+        "crown": null,
+        "chord_1": null,
+        "chord_2": null,
+        "chord_3": null
+      },
+      "event": "excavate",
+      "n_removed": 333,
+      "carried_release_norm": 0.0,
+      "release_norm": 12.753341170154425
+    },
+    {
+      "stage": 1,
+      "lambda": 0.06,
+      "readings_total": {
+        "crown": -0.0,
+        "chord_1": -0.0,
+        "chord_2": 0.0005516318443067283,
+        "chord_3": 0.0019459639137797986
+      },
+      "readings_post_install": {
+        "crown": null,
+        "chord_1": null,
+        "chord_2": null,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 2.91004969558663e-13,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 3.1266447240747825e-11
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.12,
+      "readings_total": {
+        "crown": -0.0,
+        "chord_1": -0.0,
+        "chord_2": 0.001103263688613298,
+        "chord_3": 0.0038919278275596
+      },
+      "readings_post_install": {
+        "crown": null,
+        "chord_1": null,
+        "chord_2": null,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 3.5145177875511725e-13,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 3.776103382282162e-11
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.18,
+      "readings_total": {
+        "crown": -0.0,
+        "chord_1": -0.0,
+        "chord_2": 0.001590108977854094,
+        "chord_3": 0.005837211409647288
+      },
+      "readings_post_install": {
+        "crown": null,
+        "chord_1": null,
+        "chord_2": null,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.002067243916069486,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.2221108901802236
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.24,
+      "readings_total": {
+        "crown": -0.0,
+        "chord_1": -0.0,
+        "chord_2": 0.002009112110589157,
+        "chord_3": 0.00778260664945935
+      },
+      "readings_post_install": {
+        "crown": null,
+        "chord_1": null,
+        "chord_2": null,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.00024078537135273213,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.025870702899547626
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.3,
+      "readings_total": {
+        "crown": -0.0,
+        "chord_1": -0.0,
+        "chord_2": 0.0022460020330187227,
+        "chord_3": 0.009727789641244837
+      },
+      "readings_post_install": {
+        "crown": 0.0,
+        "chord_1": 0.0,
+        "chord_2": 0.0,
+        "chord_3": null
+      },
+      "event": "install",
+      "n_ring_elements": 122,
+      "n_annulus_elements": 684,
+      "convergence_at_install_m": null,
+      "equilibrium": {
+        "residual_norm": 0.0011648270121758816,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.12515250985586107
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.36,
+      "readings_total": {
+        "crown": 0.0009645698033898251,
+        "chord_1": 0.0020393086317269473,
+        "chord_2": 0.0024066216039312608,
+        "chord_3": 0.01085376960232248
+      },
+      "readings_post_install": {
+        "crown": 0.0009645698033898251,
+        "chord_1": 0.0020393086317269473,
+        "chord_2": 0.00016061957091253803,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.0007870951295160535,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.0845678628024332
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.42,
+      "readings_total": {
+        "crown": 0.0019100526642703835,
+        "chord_1": 0.004164220722175676,
+        "chord_2": 0.0029053637262719044,
+        "chord_3": 0.011982134909898697
+      },
+      "readings_post_install": {
+        "crown": 0.0019100526642703835,
+        "chord_1": 0.004164220722175676,
+        "chord_2": 0.0006593616932531817,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.00025273655870864157,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.027154774334803674
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.48,
+      "readings_total": {
+        "crown": 0.00275409691918278,
+        "chord_1": 0.006528487689084233,
+        "chord_2": 0.004220114133653948,
+        "chord_3": 0.013310485916774062
+      },
+      "readings_post_install": {
+        "crown": 0.00275409691918278,
+        "chord_1": 0.006528487689084233,
+        "chord_2": 0.001974112100635225,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.0010406372166568295,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.1118091855293913
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.54,
+      "readings_total": {
+        "crown": 0.003287606459728616,
+        "chord_1": 0.009508872025343179,
+        "chord_2": 0.007333135252216088,
+        "chord_3": 0.01629896438435741
+      },
+      "readings_post_install": {
+        "crown": 0.003287606459728616,
+        "chord_1": 0.009508872025343179,
+        "chord_2": 0.005087133219197365,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 8.208556990353569e-06,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.0008819519970768872
+      }
+    },
+    {
+      "stage": 1,
+      "lambda": 0.6,
+      "readings_total": {
+        "crown": 0.0032134427619679804,
+        "chord_1": 0.013587057305917883,
+        "chord_2": 0.013356178027252561,
+        "chord_3": 0.02393989753824505
+      },
+      "readings_post_install": {
+        "crown": 0.0032134427619679804,
+        "chord_1": 0.013587057305917883,
+        "chord_2": 0.011110175994233838,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.00019786650386308582,
+        "release_force_norm_free": 9.307260405741516,
+        "tolerance": 0.009307260505741516,
+        "residual_over_tolerance": 0.021259370976134687
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.0,
+      "readings_total": {
+        "crown": 0.0032134427619679804,
+        "chord_1": 0.013587057305917883,
+        "chord_2": 0.013356178027252561,
+        "chord_3": 0.02393989753824505
+      },
+      "readings_post_install": {
+        "crown": 0.0032134427619679804,
+        "chord_1": 0.013587057305917883,
+        "chord_2": 0.011110175994233838,
+        "chord_3": null
+      },
+      "event": "excavate",
+      "n_removed": 188,
+      "carried_release_norm": 5.1013364680617705,
+      "release_norm": 9.531989825388806
+    },
+    {
+      "stage": 2,
+      "lambda": 0.085,
+      "readings_total": {
+        "crown": 0.0031678358670588465,
+        "chord_1": 0.017918698407732574,
+        "chord_2": 0.021209221329569837,
+        "chord_3": 0.02393989753824505
+      },
+      "readings_post_install": {
+        "crown": 0.0031678358670588465,
+        "chord_1": 0.017918698407732574,
+        "chord_2": 0.018963219296551113,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.002119956462079174,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.2909652591577623
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.17,
+      "readings_total": {
+        "crown": 0.004310196637979175,
+        "chord_1": 0.02482138050603243,
+        "chord_2": 0.031033678569601604,
+        "chord_3": 0.02393989753824505
+      },
+      "readings_post_install": {
+        "crown": 0.004310196637979175,
+        "chord_1": 0.02482138050603243,
+        "chord_2": 0.02878767653658288,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.005092707405505096,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.6989770575779422
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.255,
+      "readings_total": {
+        "crown": 0.006109932986879005,
+        "chord_1": 0.033565945604037764,
+        "chord_2": 0.042719281433983305,
+        "chord_3": 0.02393989753824505
+      },
+      "readings_post_install": {
+        "crown": 0.006109932986879005,
+        "chord_1": 0.033565945604037764,
+        "chord_2": 0.04047327940096458,
+        "chord_3": null
+      },
+      "equilibrium": {
+        "residual_norm": 0.002334351932626,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.32039116236179604
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.3,
+      "readings_total": {
+        "crown": 0.00723194786354384,
+        "chord_1": 0.038772483691110235,
+        "chord_2": 0.04969182570586124,
+        "chord_3": 0.02393989753824505
+      },
+      "readings_post_install": {
+        "crown": 0.00723194786354384,
+        "chord_1": 0.038772483691110235,
+        "chord_2": 0.047445823672842516,
+        "chord_3": 0.0
+      },
+      "event": "install",
+      "n_ring_elements": 45,
+      "n_annulus_elements": 285,
+      "convergence_at_install_m": null,
+      "equilibrium": {
+        "residual_norm": 0.0004484053230423716,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.06154389175463693
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.34,
+      "readings_total": {
+        "crown": 0.007975809511409384,
+        "chord_1": 0.04330920302153348,
+        "chord_2": 0.05543701123163726,
+        "chord_3": 0.029742533721576977
+      },
+      "readings_post_install": {
+        "crown": 0.007975809511409384,
+        "chord_1": 0.04330920302153348,
+        "chord_2": 0.053191009198618536,
+        "chord_3": 0.005802636183331926
+      },
+      "equilibrium": {
+        "residual_norm": 0.0030266981671278025,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.4154160862940283
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.425,
+      "readings_total": {
+        "crown": 0.00975299786466872,
+        "chord_1": 0.05428088592320142,
+        "chord_2": 0.0696032188163298,
+        "chord_3": 0.044937850043711085
+      },
+      "readings_post_install": {
+        "crown": 0.00975299786466872,
+        "chord_1": 0.05428088592320142,
+        "chord_2": 0.06735721678331108,
+        "chord_3": 0.020997952505466034
+      },
+      "equilibrium": {
+        "residual_norm": 0.0031013932153497615,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.4256680251675221
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.51,
+      "readings_total": {
+        "crown": 0.01196167649620221,
+        "chord_1": 0.0669497452137623,
+        "chord_2": 0.08613953842234462,
+        "chord_3": 0.06336209320221961
+      },
+      "readings_post_install": {
+        "crown": 0.01196167649620221,
+        "chord_1": 0.0669497452137623,
+        "chord_2": 0.0838935363893259,
+        "chord_3": 0.03942219566397456
+      },
+      "equilibrium": {
+        "residual_norm": 0.0066016114914605,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9060750222142668
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.595,
+      "readings_total": {
+        "crown": 0.014957628356859268,
+        "chord_1": 0.08152992159298976,
+        "chord_2": 0.10521359000362407,
+        "chord_3": 0.08515620990131825
+      },
+      "readings_post_install": {
+        "crown": 0.014957628356859268,
+        "chord_1": 0.08152992159298976,
+        "chord_2": 0.10296758797060535,
+        "chord_3": 0.061216312363073205
+      },
+      "equilibrium": {
+        "residual_norm": 3.831006313119223e-05,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.005258078477887758
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.68,
+      "readings_total": {
+        "crown": 0.018848859788166684,
+        "chord_1": 0.09890022433783968,
+        "chord_2": 0.1278246817264445,
+        "chord_3": 0.11159851157908825
+      },
+      "readings_post_install": {
+        "crown": 0.018848859788166684,
+        "chord_1": 0.09890022433783968,
+        "chord_2": 0.1255786796934258,
+        "chord_3": 0.0876586140408432
+      },
+      "equilibrium": {
+        "residual_norm": 0.005177353363101516,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.7105947645588413
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.765,
+      "readings_total": {
+        "crown": 0.024091477717294682,
+        "chord_1": 0.12036107052573758,
+        "chord_2": 0.1554337837104132,
+        "chord_3": 0.14478080703225799
+      },
+      "readings_post_install": {
+        "crown": 0.024091477717294682,
+        "chord_1": 0.12036107052573758,
+        "chord_2": 0.15318778167739447,
+        "chord_3": 0.12084090949401294
+      },
+      "equilibrium": {
+        "residual_norm": 0.0055026641012493665,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.7552438528420785
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.775625,
+      "readings_total": {
+        "crown": 0.024890517644114207,
+        "chord_1": 0.1234415705714157,
+        "chord_2": 0.15943566950216648,
+        "chord_3": 0.14962618826289942
+      },
+      "readings_post_install": {
+        "crown": 0.024890517644114207,
+        "chord_1": 0.1234415705714157,
+        "chord_2": 0.15718966746914775,
+        "chord_3": 0.12568629072465437
+      },
+      "equilibrium": {
+        "residual_norm": 0.005790587324998726,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.7947614829983161
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.78625,
+      "readings_total": {
+        "crown": 0.02566701576946748,
+        "chord_1": 0.12659059059843225,
+        "chord_2": 0.1634805944287571,
+        "chord_3": 0.1546261338482699
+      },
+      "readings_post_install": {
+        "crown": 0.02566701576946748,
+        "chord_1": 0.12659059059843225,
+        "chord_2": 0.16123459239573837,
+        "chord_3": 0.13068623631002485
+      },
+      "equilibrium": {
+        "residual_norm": 0.007270046793148601,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9978181566912482
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.7915625,
+      "readings_total": {
+        "crown": 0.02608472224960205,
+        "chord_1": 0.12824677734658682,
+        "chord_2": 0.16559007786570032,
+        "chord_3": 0.15733876573383312
+      },
+      "readings_post_install": {
+        "crown": 0.02608472224960205,
+        "chord_1": 0.12824677734658682,
+        "chord_2": 0.1633440758326816,
+        "chord_3": 0.13339886819558808
+      },
+      "equilibrium": {
+        "residual_norm": 0.0072515111141906955,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9952741239584426
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.796875,
+      "readings_total": {
+        "crown": 0.026510426521057964,
+        "chord_1": 0.1299520926665148,
+        "chord_2": 0.167764338204197,
+        "chord_3": 0.16015760107155155
+      },
+      "readings_post_install": {
+        "crown": 0.026510426521057964,
+        "chord_1": 0.1299520926665148,
+        "chord_2": 0.16551833617117828,
+        "chord_3": 0.1362177035333065
+      },
+      "equilibrium": {
+        "residual_norm": 0.007280500244043873,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9992528989150827
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.79953125,
+      "readings_total": {
+        "crown": 0.02670378812200778,
+        "chord_1": 0.13073855750969335,
+        "chord_2": 0.16877647524885842,
+        "chord_3": 0.16142392248518053
+      },
+      "readings_post_install": {
+        "crown": 0.02670378812200778,
+        "chord_1": 0.13073855750969335,
+        "chord_2": 0.1665304732158397,
+        "chord_3": 0.13748402494693548
+      },
+      "equilibrium": {
+        "residual_norm": 0.007281035146294173,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9993263145604823
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8021875,
+      "readings_total": {
+        "crown": 0.026916367978615997,
+        "chord_1": 0.1316022476162046,
+        "chord_2": 0.16989095869044712,
+        "chord_3": 0.1628396491626289
+      },
+      "readings_post_install": {
+        "crown": 0.026916367978615997,
+        "chord_1": 0.1316022476162046,
+        "chord_2": 0.1676449566574284,
+        "chord_3": 0.13889975162438387
+      },
+      "equilibrium": {
+        "residual_norm": 0.0072109213533127,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9897031556370297
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8048437500000001,
+      "readings_total": {
+        "crown": 0.027140211248971577,
+        "chord_1": 0.13252368716619706,
+        "chord_2": 0.17108306052898511,
+        "chord_3": 0.16438586961303547
+      },
+      "readings_post_install": {
+        "crown": 0.027140211248971577,
+        "chord_1": 0.13252368716619706,
+        "chord_2": 0.1688370584959664,
+        "chord_3": 0.14044597207479043
+      },
+      "equilibrium": {
+        "residual_norm": 0.006596406614036368,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9053606497563005
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8075000000000001,
+      "readings_total": {
+        "crown": 0.027378796612713783,
+        "chord_1": 0.13353163200247312,
+        "chord_2": 0.17240067101021256,
+        "chord_3": 0.16608494131785792
+      },
+      "readings_post_install": {
+        "crown": 0.027378796612713783,
+        "chord_1": 0.13353163200247312,
+        "chord_2": 0.17015466897719383,
+        "chord_3": 0.14214504377961287
+      },
+      "equilibrium": {
+        "residual_norm": 0.006265910690980316,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.8599998918243781
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8101562500000001,
+      "readings_total": {
+        "crown": 0.02760426803568369,
+        "chord_1": 0.1345030599129233,
+        "chord_2": 0.17367649593013607,
+        "chord_3": 0.16772715938465807
+      },
+      "readings_post_install": {
+        "crown": 0.02760426803568369,
+        "chord_1": 0.1345030599129233,
+        "chord_2": 0.17143049389711734,
+        "chord_3": 0.14378726184641302
+      },
+      "equilibrium": {
+        "residual_norm": 0.006913053504543292,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9488206199046902
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8128125000000002,
+      "readings_total": {
+        "crown": 0.02783003668430539,
+        "chord_1": 0.13546371543902275,
+        "chord_2": 0.174937327107569,
+        "chord_3": 0.1693657647481985
+      },
+      "readings_post_install": {
+        "crown": 0.02783003668430539,
+        "chord_1": 0.13546371543902275,
+        "chord_2": 0.1726913250745503,
+        "chord_3": 0.14542586720995346
+      },
+      "equilibrium": {
+        "residual_norm": 0.0014263591224089195,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.19576862031247216
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8154687500000002,
+      "readings_total": {
+        "crown": 0.028051781643390433,
+        "chord_1": 0.13640913158992446,
+        "chord_2": 0.17617522425936932,
+        "chord_3": 0.1709977769041869
+      },
+      "readings_post_install": {
+        "crown": 0.028051781643390433,
+        "chord_1": 0.13640913158992446,
+        "chord_2": 0.1739292222263506,
+        "chord_3": 0.14705787936594186
+      },
+      "equilibrium": {
+        "residual_norm": 0.0005676110538738474,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.07790494774087796
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8181250000000002,
+      "readings_total": {
+        "crown": 0.02827393167856131,
+        "chord_1": 0.1373459380228947,
+        "chord_2": 0.17739848317076645,
+        "chord_3": 0.17264171066078282
+      },
+      "readings_post_install": {
+        "crown": 0.02827393167856131,
+        "chord_1": 0.1373459380228947,
+        "chord_2": 0.17515248113774773,
+        "chord_3": 0.14870181312253777
+      },
+      "equilibrium": {
+        "residual_norm": 0.0023416486409812017,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.3213926398334077
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8234375000000003,
+      "readings_total": {
+        "crown": 0.028720249106287638,
+        "chord_1": 0.13918360407711422,
+        "chord_2": 0.17979499268717788,
+        "chord_3": 0.17590974699861445
+      },
+      "readings_post_install": {
+        "crown": 0.028720249106287638,
+        "chord_1": 0.13918360407711422,
+        "chord_2": 0.17754899065415916,
+        "chord_3": 0.1519698494603694
+      },
+      "equilibrium": {
+        "residual_norm": 0.0012067777048474508,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.16563094286020033
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8287500000000003,
+      "readings_total": {
+        "crown": 0.02917538444549507,
+        "chord_1": 0.1409535782715202,
+        "chord_2": 0.18209733136007286,
+        "chord_3": 0.17902274431559764
+      },
+      "readings_post_install": {
+        "crown": 0.02917538444549507,
+        "chord_1": 0.1409535782715202,
+        "chord_2": 0.17985132932705414,
+        "chord_3": 0.1550828467773526
+      },
+      "equilibrium": {
+        "residual_norm": 0.003741456525713052,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.5135170873103251
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.8393750000000004,
+      "readings_total": {
+        "crown": 0.030109540858774004,
+        "chord_1": 0.14470476877744107,
+        "chord_2": 0.18697741305691137,
+        "chord_3": 0.18570064353551763
+      },
+      "readings_post_install": {
+        "crown": 0.030109540858774004,
+        "chord_1": 0.14470476877744107,
+        "chord_2": 0.18473141102389265,
+        "chord_3": 0.16176074599727258
+      },
+      "equilibrium": {
+        "residual_norm": 0.007268549051482324,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.997612590775214
+      }
+    },
+    {
+      "stage": 2,
+      "lambda": 0.85,
+      "readings_total": {
+        "crown": 0.03110842433375207,
+        "chord_1": 0.1488853638547275,
+        "chord_2": 0.1924350778127597,
+        "chord_3": 0.19340248602902096
+      },
+      "readings_post_install": {
+        "crown": 0.03110842433375207,
+        "chord_1": 0.1488853638547275,
+        "chord_2": 0.19018907577974098,
+        "chord_3": 0.16946258849077592
+      },
+      "equilibrium": {
+        "residual_norm": 0.007254941141802224,
+        "release_force_norm_free": 7.285943480397435,
+        "tolerance": 0.0072859435803974346,
+        "residual_over_tolerance": 0.9957448972458939
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.0,
+      "readings_total": {
+        "crown": 0.03110842433375207,
+        "chord_1": 0.1488853638547275,
+        "chord_2": 0.1924350778127597,
+        "chord_3": 0.19340248602902096
+      },
+      "readings_post_install": {
+        "crown": 0.03110842433375207,
+        "chord_1": 0.1488853638547275,
+        "chord_2": 0.19018907577974098,
+        "chord_3": 0.16946258849077592
+      },
+      "event": "excavate",
+      "n_removed": 114,
+      "carried_release_norm": 1.4297984738083211,
+      "release_norm": 2.1143964448037673
+    },
+    {
+      "stage": 3,
+      "lambda": 0.1,
+      "readings_total": {
+        "crown": 0.03291382840109366,
+        "chord_1": 0.15550833256718724,
+        "chord_2": 0.20154176979551813,
+        "chord_3": 0.20547927587613798
+      },
+      "readings_post_install": {
+        "crown": 0.03291382840109366,
+        "chord_1": 0.15550833256718724,
+        "chord_2": 0.1992957677624994,
+        "chord_3": 0.18153937833789294
+      },
+      "equilibrium": {
+        "residual_norm": 2.033645228877517e-06,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.001133714226127919
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.10312500000000001,
+      "readings_total": {
+        "crown": 0.03298040460234585,
+        "chord_1": 0.1557633692809891,
+        "chord_2": 0.20190391617096495,
+        "chord_3": 0.20594678174280417
+      },
+      "readings_post_install": {
+        "crown": 0.03298040460234585,
+        "chord_1": 0.1557633692809891,
+        "chord_2": 0.19965791413794623,
+        "chord_3": 0.18200688420455913
+      },
+      "equilibrium": {
+        "residual_norm": 0.0003355467877553614,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.18706024109217448
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.10625000000000001,
+      "readings_total": {
+        "crown": 0.033041193621853024,
+        "chord_1": 0.15597760593587565,
+        "chord_2": 0.20220999857174501,
+        "chord_3": 0.20634409267513312
+      },
+      "readings_post_install": {
+        "crown": 0.033041193621853024,
+        "chord_1": 0.15597760593587565,
+        "chord_2": 0.1999639965387263,
+        "chord_3": 0.18240419513688808
+      },
+      "equilibrium": {
+        "residual_norm": 0.0006992645491901599,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.3898252045079576
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.10937500000000001,
+      "readings_total": {
+        "crown": 0.03309507774216597,
+        "chord_1": 0.15617385988116791,
+        "chord_2": 0.2024958664068161,
+        "chord_3": 0.20673027080987172
+      },
+      "readings_post_install": {
+        "crown": 0.03309507774216597,
+        "chord_1": 0.15617385988116791,
+        "chord_2": 0.20024986437379738,
+        "chord_3": 0.18279037327162667
+      },
+      "equilibrium": {
+        "residual_norm": 0.0015645645909391139,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.872211686314001
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.11250000000000002,
+      "readings_total": {
+        "crown": 0.03316487071863518,
+        "chord_1": 0.15643671618416133,
+        "chord_2": 0.20286496997003972,
+        "chord_3": 0.20722395748305694
+      },
+      "readings_post_install": {
+        "crown": 0.03316487071863518,
+        "chord_1": 0.15643671618416133,
+        "chord_2": 0.200618967937021,
+        "chord_3": 0.1832840599448119
+      },
+      "equilibrium": {
+        "residual_norm": 0.0010304201657805555,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.5744374605000798
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.11562500000000002,
+      "readings_total": {
+        "crown": 0.03321924011695448,
+        "chord_1": 0.15664009932894177,
+        "chord_2": 0.20315954676103468,
+        "chord_3": 0.20762984199900378
+      },
+      "readings_post_install": {
+        "crown": 0.03321924011695448,
+        "chord_1": 0.15664009932894177,
+        "chord_2": 0.20091354472801595,
+        "chord_3": 0.18368994446075873
+      },
+      "equilibrium": {
+        "residual_norm": 0.0017763056334669756,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9902528415559568
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.11875000000000002,
+      "readings_total": {
+        "crown": 0.03328161842153739,
+        "chord_1": 0.15688010912590875,
+        "chord_2": 0.2035002610510754,
+        "chord_3": 0.20809599797971223
+      },
+      "readings_post_install": {
+        "crown": 0.03328161842153739,
+        "chord_1": 0.15688010912590875,
+        "chord_2": 0.20125425901805669,
+        "chord_3": 0.18415610044146719
+      },
+      "equilibrium": {
+        "residual_norm": 0.00177922852078353,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9918822894483876
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.12187500000000002,
+      "readings_total": {
+        "crown": 0.03334819188770549,
+        "chord_1": 0.1571331708417921,
+        "chord_2": 0.203858364237443,
+        "chord_3": 0.2085782460431323
+      },
+      "readings_post_install": {
+        "crown": 0.03334819188770549,
+        "chord_1": 0.1571331708417921,
+        "chord_2": 0.20161236220442427,
+        "chord_3": 0.18463834850488725
+      },
+      "equilibrium": {
+        "residual_norm": 0.0017919007497759177,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9989467892349854
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.12500000000000003,
+      "readings_total": {
+        "crown": 0.03341479418298173,
+        "chord_1": 0.1573822842642059,
+        "chord_2": 0.20421144429700275,
+        "chord_3": 0.2090565533841872
+      },
+      "readings_post_install": {
+        "crown": 0.03341479418298173,
+        "chord_1": 0.1573822842642059,
+        "chord_2": 0.20196544226398402,
+        "chord_3": 0.18511665584594214
+      },
+      "equilibrium": {
+        "residual_norm": 0.0017390722332459166,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9694960080048913
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.12812500000000004,
+      "readings_total": {
+        "crown": 0.03347909808506587,
+        "chord_1": 0.1576219956462423,
+        "chord_2": 0.20455478782501074,
+        "chord_3": 0.20953284810445566
+      },
+      "readings_post_install": {
+        "crown": 0.03347909808506587,
+        "chord_1": 0.1576219956462423,
+        "chord_2": 0.20230878579199202,
+        "chord_3": 0.1855929505662106
+      },
+      "equilibrium": {
+        "residual_norm": 0.0017560654520888846,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9789693682923253
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.13125000000000003,
+      "readings_total": {
+        "crown": 0.033541398771938846,
+        "chord_1": 0.15784703579944495,
+        "chord_2": 0.2048787520952923,
+        "chord_3": 0.20998749130040206
+      },
+      "readings_post_install": {
+        "crown": 0.033541398771938846,
+        "chord_1": 0.15784703579944495,
+        "chord_2": 0.20263275006227358,
+        "chord_3": 0.18604759376215702
+      },
+      "equilibrium": {
+        "residual_norm": 0.0010732271040835247,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.5983014237134882
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.13437500000000002,
+      "readings_total": {
+        "crown": 0.033608098647816206,
+        "chord_1": 0.1580881644870505,
+        "chord_2": 0.20522423298380157,
+        "chord_3": 0.21046728295082398
+      },
+      "readings_post_install": {
+        "crown": 0.033608098647816206,
+        "chord_1": 0.1580881644870505,
+        "chord_2": 0.20297823095078285,
+        "chord_3": 0.18652738541257893
+      },
+      "equilibrium": {
+        "residual_norm": 9.70922260568366e-05,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.05412686360630363
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.1375,
+      "readings_total": {
+        "crown": 0.03367285165286625,
+        "chord_1": 0.1583192664955143,
+        "chord_2": 0.20555880409411323,
+        "chord_3": 0.21094035702423763
+      },
+      "readings_post_install": {
+        "crown": 0.03367285165286625,
+        "chord_1": 0.1583192664955143,
+        "chord_2": 0.2033128020610945,
+        "chord_3": 0.1870004594859926
+      },
+      "equilibrium": {
+        "residual_norm": 0.0002868238655102589,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.15989824188826907
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.14375000000000002,
+      "readings_total": {
+        "crown": 0.03380287803150357,
+        "chord_1": 0.15878080227091412,
+        "chord_2": 0.20623003487150993,
+        "chord_3": 0.21189183310865617
+      },
+      "readings_post_install": {
+        "crown": 0.03380287803150357,
+        "chord_1": 0.15878080227091412,
+        "chord_2": 0.2039840328384912,
+        "chord_3": 0.18795193557041112
+      },
+      "equilibrium": {
+        "residual_norm": 0.0001697418256498653,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.09462747964864793
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.15000000000000002,
+      "readings_total": {
+        "crown": 0.033935896429910045,
+        "chord_1": 0.15925505720903,
+        "chord_2": 0.20691981981245963,
+        "chord_3": 0.21286313816740923
+      },
+      "readings_post_install": {
+        "crown": 0.033935896429910045,
+        "chord_1": 0.15925505720903,
+        "chord_2": 0.2046738177794409,
+        "chord_3": 0.18892324062916419
+      },
+      "equilibrium": {
+        "residual_norm": 0.001282814644458196,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.7151420470276519
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.16250000000000003,
+      "readings_total": {
+        "crown": 0.034200731036466724,
+        "chord_1": 0.1601971452848277,
+        "chord_2": 0.2082935808240002,
+        "chord_3": 0.21484702691459664
+      },
+      "readings_post_install": {
+        "crown": 0.034200731036466724,
+        "chord_1": 0.1601971452848277,
+        "chord_2": 0.20604757879098148,
+        "chord_3": 0.1909071293763516
+      },
+      "equilibrium": {
+        "residual_norm": 0.0007385944984247882,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.4117508198154014
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.17500000000000004,
+      "readings_total": {
+        "crown": 0.03446823004991764,
+        "chord_1": 0.16116399245754714,
+        "chord_2": 0.20971117159159372,
+        "chord_3": 0.21688094896396215
+      },
+      "readings_post_install": {
+        "crown": 0.03446823004991764,
+        "chord_1": 0.16116399245754714,
+        "chord_2": 0.207465169558575,
+        "chord_3": 0.1929410514257171
+      },
+      "equilibrium": {
+        "residual_norm": 0.0015987138725994349,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.8912491889622502
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.18750000000000006,
+      "readings_total": {
+        "crown": 0.034751228310706726,
+        "chord_1": 0.16219771382226672,
+        "chord_2": 0.2112364089653774,
+        "chord_3": 0.21907107444271362
+      },
+      "readings_post_install": {
+        "crown": 0.034751228310706726,
+        "chord_1": 0.16219771382226672,
+        "chord_2": 0.20899040693235868,
+        "chord_3": 0.19513117690446857
+      },
+      "equilibrium": {
+        "residual_norm": 5.004021784880523e-07,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.00027896363656823223
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.2,
+      "readings_total": {
+        "crown": 0.03504370323077608,
+        "chord_1": 0.1632824392434778,
+        "chord_2": 0.21282262793193576,
+        "chord_3": 0.22136333383429335
+      },
+      "readings_post_install": {
+        "crown": 0.03504370323077608,
+        "chord_1": 0.1632824392434778,
+        "chord_2": 0.21057662589891704,
+        "chord_3": 0.1974234362960483
+      },
+      "equilibrium": {
+        "residual_norm": 3.845495272917143e-05,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.021437823252092935
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.21250000000000002,
+      "readings_total": {
+        "crown": 0.03533467959764268,
+        "chord_1": 0.16434028731978706,
+        "chord_2": 0.21437608897936078,
+        "chord_3": 0.22364331600189938
+      },
+      "readings_post_install": {
+        "crown": 0.03533467959764268,
+        "chord_1": 0.16434028731978706,
+        "chord_2": 0.21213008694634206,
+        "chord_3": 0.19970341846365433
+      },
+      "equilibrium": {
+        "residual_norm": 2.4138942560911938e-05,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.01345695020763074
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.22500000000000003,
+      "readings_total": {
+        "crown": 0.03562632109258644,
+        "chord_1": 0.16535013422892192,
+        "chord_2": 0.21592821451703598,
+        "chord_3": 0.22598832250299083
+      },
+      "readings_post_install": {
+        "crown": 0.03562632109258644,
+        "chord_1": 0.16535013422892192,
+        "chord_2": 0.21368221248401725,
+        "chord_3": 0.2020484249647458
+      },
+      "equilibrium": {
+        "residual_norm": 0.0009337013839101429,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.5205187841335178
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.23750000000000004,
+      "readings_total": {
+        "crown": 0.03592892652866686,
+        "chord_1": 0.16636493589119666,
+        "chord_2": 0.21754201307118187,
+        "chord_3": 0.22849502565108423
+      },
+      "readings_post_install": {
+        "crown": 0.03592892652866686,
+        "chord_1": 0.16636493589119666,
+        "chord_2": 0.21529601103816315,
+        "chord_3": 0.20455512811283919
+      },
+      "equilibrium": {
+        "residual_norm": 0.00013191019027606989,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.07353714264594977
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.25000000000000006,
+      "readings_total": {
+        "crown": 0.036241620129044735,
+        "chord_1": 0.1673579482751756,
+        "chord_2": 0.21917255512022377,
+        "chord_3": 0.23112933521169615
+      },
+      "readings_post_install": {
+        "crown": 0.036241620129044735,
+        "chord_1": 0.1673579482751756,
+        "chord_2": 0.21692655308720504,
+        "chord_3": 0.2071894376734511
+      },
+      "equilibrium": {
+        "residual_norm": 0.00042001171150929633,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.23414765059156922
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.26250000000000007,
+      "readings_total": {
+        "crown": 0.03657156105446263,
+        "chord_1": 0.16833572955645443,
+        "chord_2": 0.22084274803116832,
+        "chord_3": 0.2339432252733461
+      },
+      "readings_post_install": {
+        "crown": 0.03657156105446263,
+        "chord_1": 0.16833572955645443,
+        "chord_2": 0.2185967459981496,
+        "chord_3": 0.21000332773510105
+      },
+      "equilibrium": {
+        "residual_norm": 0.0003715893618904052,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.20715321427300962
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.2750000000000001,
+      "readings_total": {
+        "crown": 0.03691293363050141,
+        "chord_1": 0.16926919780647953,
+        "chord_2": 0.2225029989316994,
+        "chord_3": 0.2368856997997076
+      },
+      "readings_post_install": {
+        "crown": 0.03691293363050141,
+        "chord_1": 0.16926919780647953,
+        "chord_2": 0.22025699689868067,
+        "chord_3": 0.21294580226146256
+      },
+      "equilibrium": {
+        "residual_norm": 0.001725700536542068,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9620415697551145
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.2875000000000001,
+      "readings_total": {
+        "crown": 0.03728706694682896,
+        "chord_1": 0.17019126933997877,
+        "chord_2": 0.22423331186732284,
+        "chord_3": 0.24011613781103625
+      },
+      "readings_post_install": {
+        "crown": 0.03728706694682896,
+        "chord_1": 0.17019126933997877,
+        "chord_2": 0.22198730983430412,
+        "chord_3": 0.2161762402727912
+      },
+      "equilibrium": {
+        "residual_norm": 0.0017870711648855211,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9962543977505782
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.3,
+      "readings_total": {
+        "crown": 0.03771755961284771,
+        "chord_1": 0.17112819710767693,
+        "chord_2": 0.22608853526622866,
+        "chord_3": 0.2438203576925
+      },
+      "readings_post_install": {
+        "crown": 0.03771755961284771,
+        "chord_1": 0.17112819710767693,
+        "chord_2": 0.22384253323320993,
+        "chord_3": 0.21988046015425494
+      },
+      "event": "install",
+      "n_ring_elements": 73,
+      "n_annulus_elements": 372,
+      "convergence_at_install_m": null,
+      "equilibrium": {
+        "residual_norm": 0.001783870793219293,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.9944702581989111
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.3125,
+      "readings_total": {
+        "crown": 0.03784963471100869,
+        "chord_1": 0.17132690578857007,
+        "chord_2": 0.22626159004635668,
+        "chord_3": 0.24385566079412582
+      },
+      "readings_post_install": {
+        "crown": 0.03784963471100869,
+        "chord_1": 0.17132690578857007,
+        "chord_2": 0.22401558801333796,
+        "chord_3": 0.21991576325588078
+      },
+      "equilibrium": {
+        "residual_norm": 0.0013330449579384437,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.7431443849805967
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.325,
+      "readings_total": {
+        "crown": 0.037985986863140433,
+        "chord_1": 0.17153349562519843,
+        "chord_2": 0.22643901317097734,
+        "chord_3": 0.2438930193428208
+      },
+      "readings_post_install": {
+        "crown": 0.037985986863140433,
+        "chord_1": 0.17153349562519843,
+        "chord_2": 0.22419301113795861,
+        "chord_3": 0.21995312180457574
+      },
+      "equilibrium": {
+        "residual_norm": 1.6724523810194275e-07,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 9.3235684865732e-05
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.3375,
+      "readings_total": {
+        "crown": 0.03812416211285009,
+        "chord_1": 0.17174376660951382,
+        "chord_2": 0.22661872015307302,
+        "chord_3": 0.24393084457279762
+      },
+      "readings_post_install": {
+        "crown": 0.03812416211285009,
+        "chord_1": 0.17174376660951382,
+        "chord_2": 0.2243727181200543,
+        "chord_3": 0.21999094703455258
+      },
+      "equilibrium": {
+        "residual_norm": 0.001250921053735295,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.6973620443942466
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.35000000000000003,
+      "readings_total": {
+        "crown": 0.03826448788140463,
+        "chord_1": 0.1719576483380432,
+        "chord_2": 0.22680072051186842,
+        "chord_3": 0.24396923220997385
+      },
+      "readings_post_install": {
+        "crown": 0.03826448788140463,
+        "chord_1": 0.1719576483380432,
+        "chord_2": 0.2245547184788497,
+        "chord_3": 0.2200293346717288
+      },
+      "equilibrium": {
+        "residual_norm": 0.0006457430330746346,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.3599880906581651
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.37500000000000006,
+      "readings_total": {
+        "crown": 0.038550855995755744,
+        "chord_1": 0.17239301301525373,
+        "chord_2": 0.2271687660436699,
+        "chord_3": 0.24404708441239847
+      },
+      "readings_post_install": {
+        "crown": 0.038550855995755744,
+        "chord_1": 0.17239301301525373,
+        "chord_2": 0.22492276401065117,
+        "chord_3": 0.22010718687415343
+      },
+      "equilibrium": {
+        "residual_norm": 0.0015062626644522402,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.8397095947346768
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.4,
+      "readings_total": {
+        "crown": 0.03884569555402228,
+        "chord_1": 0.1728359753852548,
+        "chord_2": 0.22754119876263262,
+        "chord_3": 0.2441259753283318
+      },
+      "readings_post_install": {
+        "crown": 0.03884569555402228,
+        "chord_1": 0.1728359753852548,
+        "chord_2": 0.2252951967296139,
+        "chord_3": 0.22018607779008675
+      },
+      "equilibrium": {
+        "residual_norm": 5.704752714451619e-05,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.031802790462550204
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.45000000000000007,
+      "readings_total": {
+        "crown": 0.03944405320530008,
+        "chord_1": 0.17373662015098915,
+        "chord_2": 0.22829772967876202,
+        "chord_3": 0.2442854834143553
+      },
+      "readings_post_install": {
+        "crown": 0.03944405320530008,
+        "chord_1": 0.17373662015098915,
+        "chord_2": 0.2260517276457433,
+        "chord_3": 0.22034558587611025
+      },
+      "equilibrium": {
+        "residual_norm": 0.00033582950067478695,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.18721784756852128
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.5,
+      "readings_total": {
+        "crown": 0.04005467466052875,
+        "chord_1": 0.1746645890696977,
+        "chord_2": 0.22907557363760808,
+        "chord_3": 0.24444410213226764
+      },
+      "readings_post_install": {
+        "crown": 0.04005467466052875,
+        "chord_1": 0.1746645890696977,
+        "chord_2": 0.22682957160458936,
+        "chord_3": 0.2205042045940226
+      },
+      "equilibrium": {
+        "residual_norm": 0.00045305906995494924,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.2525708543410576
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.6,
+      "readings_total": {
+        "crown": 0.04131173146527054,
+        "chord_1": 0.17654959754145785,
+        "chord_2": 0.23068976912894526,
+        "chord_3": 0.24475897713456524
+      },
+      "readings_post_install": {
+        "crown": 0.04131173146527054,
+        "chord_1": 0.17654959754145785,
+        "chord_2": 0.22844376709592654,
+        "chord_3": 0.2208190795963202
+      },
+      "equilibrium": {
+        "residual_norm": 0.00032298496758525764,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.18005729189008185
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.7,
+      "readings_total": {
+        "crown": 0.04259556903513672,
+        "chord_1": 0.1784640912849775,
+        "chord_2": 0.23235299590453723,
+        "chord_3": 0.2450606811993054
+      },
+      "readings_post_install": {
+        "crown": 0.04259556903513672,
+        "chord_1": 0.1784640912849775,
+        "chord_2": 0.2301069938715185,
+        "chord_3": 0.22112078366106036
+      },
+      "equilibrium": {
+        "residual_norm": 6.745280546018125e-05,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.03760351316766089
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.8,
+      "readings_total": {
+        "crown": 0.04393511880836278,
+        "chord_1": 0.18039005376291822,
+        "chord_2": 0.23407384761214384,
+        "chord_3": 0.2453522596794314
+      },
+      "readings_post_install": {
+        "crown": 0.04393511880836278,
+        "chord_1": 0.18039005376291822,
+        "chord_2": 0.2318278455791251,
+        "chord_3": 0.22141236214118634
+      },
+      "equilibrium": {
+        "residual_norm": 2.6163046363907263e-06,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.001458534529052434
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 0.9,
+      "readings_total": {
+        "crown": 0.04532911888732348,
+        "chord_1": 0.18237434954043102,
+        "chord_2": 0.23590829076220035,
+        "chord_3": 0.24561569562013638
+      },
+      "readings_post_install": {
+        "crown": 0.04532911888732348,
+        "chord_1": 0.18237434954043102,
+        "chord_2": 0.23366228872918163,
+        "chord_3": 0.22167579808189133
+      },
+      "equilibrium": {
+        "residual_norm": 3.3614406923770973e-06,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.0018739321289272537
+      }
+    },
+    {
+      "stage": 3,
+      "lambda": 1.0,
+      "readings_total": {
+        "crown": 0.04679447623285367,
+        "chord_1": 0.18438344230098697,
+        "chord_2": 0.23791595925056244,
+        "chord_3": 0.24589205861251812
+      },
+      "readings_post_install": {
+        "crown": 0.04679447623285367,
+        "chord_1": 0.18438344230098697,
+        "chord_2": 0.23566995721754372,
+        "chord_3": 0.22195216107427307
+      },
+      "equilibrium": {
+        "residual_norm": 0.0008222252113573526,
+        "release_force_norm_free": 1.7937898887021944,
+        "tolerance": 0.0017937899887021944,
+        "residual_over_tolerance": 0.45837317441616
+      }
+    }
+  ],
+  "readings": {
+    "crown_settlement": {
+      "total": 0.04679447623285367,
+      "post_install": 0.04679447623285367,
+      "stage": 1,
+      "point": [
+        2.2962127484012875e-16,
+        0.0
+      ],
+      "channel": "GD",
+      "boundary": "initial_support_inner"
+    },
+    "chord_shortening": [
+      {
+        "name": "chord_1",
+        "channel": "SL1",
+        "boundary": "initial_support_inner",
+        "depth_below_crown": 1.9045246889580092,
+        "initial_chord_length_m": 6.52892667330074,
+        "point": [
+          3.26446333665037,
+          -1.9045246889580092
+        ],
+        "stage": 1,
+        "total": 0.18438344230098697,
+        "post_install": 0.18438344230098697
+      },
+      {
+        "name": "chord_2",
+        "channel": "SL2",
+        "boundary": "initial_support_inner",
+        "depth_below_crown": 3.5805064152410573,
+        "initial_chord_length_m": 7.492335263380988,
+        "point": [
+          3.746167631690494,
+          -3.5805064152410573
+        ],
+        "stage": 1,
+        "total": 0.23791595925056244,
+        "post_install": 0.23566995721754372
+      },
+      {
+        "name": "chord_3",
+        "channel": "SL3",
+        "boundary": "initial_support_inner",
+        "depth_below_crown": 5.256488141524105,
+        "initial_chord_length_m": 6.860842263927334,
+        "point": [
+          3.430421131963667,
+          -5.256488141524105
+        ],
+        "stage": 2,
+        "total": 0.24589205861251812,
+        "post_install": 0.22195216107427307
+      }
+    ],
+    "install_lambda": {
+      "1": 0.3,
+      "2": 0.3,
+      "3": 0.3
+    },
+    "install_convergence_m": {
+      "1": null,
+      "2": null,
+      "3": null
+    },
+    "exc_line_max_convergence_m": 0.3497388673797181
+  },
+  "materials": {
+    "rock": {
+      "name": "neural_cwfs",
+      "E": 560.0,
+      "nu": 0.3,
+      "psi_deg": 5.0,
+      "theta": [
+        1.0,
+        0.2,
+        20.0,
+        30.0,
+        0.01,
+        0.015
+      ],
+      "checkpoint": "compute/runs/principal_material/production/best.pt",
+      "material_calls": 8510,
+      "integration_point_updates": 42804051,
+      "neural_transition_updates": 3023933,
+      "stress_update": "neural strength prediction and differentiable MC region layer",
+      "tangent": "derivative of the neural stress map with spectral rotation"
+    },
+    "characteristic_length": {
+      "definition": "h = sqrt(w_q det J), the square root of the integration point's tributary area; A_e/3 for a T6 with three Gauss points",
+      "h_char_m": {
+        "min": 0.016409772249903594,
+        "median": 0.1609207354224531,
+        "mean": 0.5888673214804012,
+        "max": 3.4785163446296363,
+        "n": 9666
+      },
+      "h_char_in_rock_within_2m_of_the_excavation_line_m": {
+        "min": 0.05768060244034254,
+        "median": 0.14474293516723202,
+        "mean": 0.1322997790603971,
+        "max": 0.17401894025868153,
+        "n": 1654
+      }
+    },
+    "crack_band": null,
+    "lining": {
+      "name": "tresca_epp",
+      "E": 35500.0,
+      "nu": 0.2,
+      "sigma_lim": 36.2801724137931,
+      "yield_function": "s1 - s3 - sigma_lim (compression positive, sorted)",
+      "flow": "associated, incompressible (psi = 0)",
+      "apex_tangent_fraction": 0.001
+    },
+    "lining_thickness": 0.29,
+    "upgraded_lining": null,
+    "bolted_rock": {
+      "name": "neural_cwfs",
+      "E": 560.0,
+      "nu": 0.3,
+      "psi_deg": 5.0,
+      "theta": [
+        1.1874426546242995,
+        0.4273295203173553,
+        20.0,
+        30.0,
+        0.01,
+        0.015
+      ],
+      "checkpoint": "compute/runs/principal_material/production/best.pt",
+      "material_calls": 8496,
+      "integration_point_updates": 24722757,
+      "neural_transition_updates": 4638854,
+      "stress_update": "neural strength prediction and differentiable MC region layer",
+      "tangent": "derivative of the neural stress map with spectral rotation"
+    },
+    "bolts": {
+      "enabled": true,
+      "diameter_mm": 32.0,
+      "spacing_circumferential_m": 1.2,
+      "spacing_longitudinal_m": 0.6,
+      "arch_length_m": 5.0,
+      "wall_length_m": 5.0,
+      "steel_E_MPa": 206000.0,
+      "steel_yield_MPa": 235.0,
+      "mobilisation": 1.0,
+      "steel_area_mm2": 804.247719318987,
+      "tributary_area_m2": 0.72,
+      "bar_yield_load_kN": 188.99821403996197,
+      "confinement_MPa": 0.2624975194999472,
+      "axial_stiffness_not_modelled_MPa": 230.10420858293242,
+      "delta_c_peak_MPa": 0.18744265462429946,
+      "delta_c_res_MPa": 0.22732952031735532,
+      "reinforced_rock": {
+        "model": "neural_cwfs",
+        "E": 560.0,
+        "nu": 0.3,
+        "c_peak": 1.1874426546242995,
+        "c_res": 0.4273295203173553,
+        "phi_peak_deg": 20.0,
+        "phi_res_deg": 30.0,
+        "gp_c": 0.01,
+        "gp_phi": 0.015,
+        "psi_deg": 5.0,
+        "checkpoint": "compute/runs/principal_material/production/best.pt"
+      },
+      "n_annulus_elements": 1341,
+      "n_annulus_installed": 1341,
+      "annulus_area_m2_half_section": 99.56687014054143,
+      "annulus_max_distance_m": 5.199994195397661,
+      "n_annulus_elements_per_stage": {
+        "1": 684,
+        "2": 285,
+        "3": 372
+      }
+    }
+  },
+  "completed": true
+}

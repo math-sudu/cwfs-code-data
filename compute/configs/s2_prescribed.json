@@ -1,0 +1,219 @@
+{
+  "geometry": "cad_reference",
+  "horseshoe": {},
+  "cad_section": {
+    "geometry": {
+      "geometry_id": "s2_model_section",
+      "source": {
+        "boundary_role": "initial_support_inner",
+        "units": "m"
+      },
+      "transform": {
+        "scale": 1.0,
+        "source_crown_y_m": 0.0,
+        "target_width_m": 7.5,
+        "resulting_height_m": 6.094479004665629
+      },
+      "source_circular_arcs": [
+        {
+          "arc_id": "crown",
+          "center": [
+            0.0,
+            -3.7500000000000004
+          ],
+          "radius": 3.7500000000000004,
+          "start_rad": 0,
+          "sweep_rad": 3.141592653589793,
+          "start_deg": 0,
+          "end_deg": 180,
+          "sweep_deg": 180
+        },
+        {
+          "arc_id": "left_wall",
+          "center": [
+            1.4405132192846026,
+            -3.7500000000000004
+          ],
+          "radius": 5.190513219284602,
+          "start_rad": 3.141592653589793,
+          "sweep_rad": 0.2026688811966828,
+          "start_deg": 180,
+          "end_deg": 191.61207153120822,
+          "sweep_deg": 11.612071531208214
+        },
+        {
+          "arc_id": "left_knee",
+          "center": [
+            -2.551881517669129,
+            -4.57039757496181
+          ],
+          "radius": 1.1146982189860029,
+          "start_rad": 3.344261534786476,
+          "sweep_rad": 1.0499900128984248,
+          "start_deg": 191.61207153120822,
+          "end_deg": 251.7720678011748,
+          "sweep_deg": 60.15999626996661
+        },
+        {
+          "arc_id": "invert",
+          "center": [
+            0.0,
+            3.17846034214619
+          ],
+          "radius": 9.27293934681182,
+          "start_rad": 4.394251547684901,
+          "sweep_rad": 0.636274865399578,
+          "start_deg": 251.7720678011748,
+          "end_deg": 288.22793219882516,
+          "sweep_deg": 36.45586439765035
+        },
+        {
+          "arc_id": "right_knee",
+          "center": [
+            2.551881517669129,
+            -4.57039757496181
+          ],
+          "radius": 1.1146982189860029,
+          "start_rad": 5.030526413084479,
+          "sweep_rad": 1.0499900128984248,
+          "start_deg": 288.22793219882516,
+          "end_deg": 348.3879284687918,
+          "sweep_deg": 60.15999626996661
+        },
+        {
+          "arc_id": "right_wall",
+          "center": [
+            -1.4405132192846026,
+            -3.7500000000000004
+          ],
+          "radius": 5.190513219284602,
+          "start_rad": 6.080516425982903,
+          "sweep_rad": 0.2026688811966828,
+          "start_deg": 348.3879284687918,
+          "end_deg": 360,
+          "sweep_deg": 11.612071531208214
+        }
+      ]
+    },
+    "reference_boundary": "initial_support_inner",
+    "cut_levels_y_m": [
+      -3.5805064152410573,
+      -5.637393079315707
+    ],
+    "station_depths_m": {
+      "shoulder": 1.9045246889580092,
+      "haunch": 3.5805064152410573,
+      "foot": 5.256488141524105
+    },
+    "position_basis": "Height-proportional construction cuts and monitoring positions."
+  },
+  "circle_radius": 4.9,
+  "lining": {
+    "enabled": true,
+    "E": 35500.0,
+    "nu": 0.2,
+    "model": "tresca",
+    "sigma_lim": 36.2801724137931,
+    "thickness": 0.29
+  },
+  "ring_upgrade": {
+    "enabled": false
+  },
+  "bolts": {
+    "enabled": true,
+    "diameter_mm": 32.0,
+    "arch_length_m": 5.0,
+    "wall_length_m": 5.0,
+    "spacing_circumferential_m": 1.2,
+    "spacing_longitudinal_m": 0.6,
+    "steel_E_MPa": 206000.0,
+    "steel_yield_MPa": 235.0,
+    "mobilisation": 1.0
+  },
+  "rock": {
+    "model": "neural_cwfs",
+    "E": 560.0,
+    "nu": 0.3,
+    "c_peak": 1.0,
+    "c_res": 0.2,
+    "phi_peak_deg": 20.0,
+    "phi_res_deg": 30.0,
+    "gp_c": 0.01,
+    "gp_phi": 0.015,
+    "psi_deg": 5.0,
+    "checkpoint": "compute/runs/principal_material/production/best.pt"
+  },
+  "stress": {
+    "sigma_v": 6.74,
+    "K": 1.5,
+    "sigma_z": 11.65
+  },
+  "mesh": {
+    "h_wall": 0.4,
+    "r_far": 80.0,
+    "h_far": null,
+    "h_ring": null,
+    "dist_min": null,
+    "growth_length": null
+  },
+  "stages": [
+    {
+      "regions": [
+        1
+      ],
+      "n_increments": 10,
+      "lambda_install": 0.3,
+      "lambda_end": 0.6,
+      "install_regions": null,
+      "extra_lambdas": [],
+      "install_gap_m": null
+    },
+    {
+      "regions": [
+        2
+      ],
+      "n_increments": 10,
+      "lambda_install": 0.3,
+      "lambda_end": 0.85,
+      "install_regions": null,
+      "extra_lambdas": [],
+      "install_gap_m": null
+    },
+    {
+      "regions": [
+        3
+      ],
+      "n_increments": 10,
+      "lambda_install": 0.3,
+      "lambda_end": 1.0,
+      "install_regions": null,
+      "extra_lambdas": [],
+      "install_gap_m": null
+    }
+  ],
+  "solver": {
+    "tol_rel": 0.001,
+    "tol_abs": 1e-10,
+    "max_iter": 25,
+    "modified_max_iter": 400,
+    "relax_block": 30,
+    "max_stalls": 10,
+    "max_bisect": 8,
+    "line_search": true,
+    "adaptive": true,
+    "divergence_factor": 1000.0,
+    "on_failure": "partial",
+    "time_scale": 1.0
+  },
+  "readings": {
+    "chord_depths": [
+      1.9045246889580092,
+      3.5805064152410573,
+      5.256488141524105
+    ],
+    "station_window": 0.5,
+    "plastic_band": 0.5,
+    "boundary": "initial_support_inner"
+  },
+  "label": "neural_s2_prescribed"
+}

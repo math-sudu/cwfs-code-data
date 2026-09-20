@@ -1,0 +1,33 @@
+{
+  "frozen_element_params": {
+    "E_MPa": 560.0,
+    "nu": 0.3,
+    "psi_deg": 5.0
+  },
+  "theta_softening_box": {
+    "c_peak_MPa": [
+      0.5,
+      10.0
+    ],
+    "c_res_MPa": [
+      0.05,
+      2.0
+    ],
+    "phi_peak_deg": [
+      15.0,
+      40.0
+    ],
+    "phi_res_deg": [
+      25.0,
+      45.0
+    ],
+    "gamma_p_c": [
+      0.002,
+      0.03
+    ],
+    "gamma_p_phi": [
+      0.004,
+      0.04
+    ]
+  }
+}
