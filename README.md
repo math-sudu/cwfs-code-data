@@ -1,7 +1,7 @@
 # CWFS neural material: code and data
 
-Code and numerical data for *Physics-constrained learning of rock strength
-evolution for staged tunnel analysis*.
+Code and numerical data for *Modeling path-dependent rock deformation during
+staged excavation using a corrective physics-informed neural network*.
 
 The package contains the neural constitutive material, its synthetic training
 corpus, the three retained trained models, material-point assessments, recurrent
